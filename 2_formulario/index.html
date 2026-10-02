@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="caja">
+    <h1>Iniciar sesión</h1>
+
+    <!-- Paso 1: nombre -->
+    <div class="paso activo">
+      <p>Introduce tu nombre</p>
+      <input type="text" id="nombre" placeholder="Nombre">
+      <div class="abajo">
+        <button onclick="siguiente(1)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Paso 2: correo -->
+    <div class="paso">
+      <p>Introduce tu correo</p>
+      <input type="email" id="correo" placeholder="Correo electrónico">
+      <div class="abajo">
+        <button onclick="siguiente(2)">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Paso 3: contraseña -->
+    <div class="paso">
+      <p>Introduce tu contraseña</p>
+      <input type="password" id="clave" placeholder="Contraseña">
+      <div class="abajo">
+        <button onclick="siguiente(3)">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
