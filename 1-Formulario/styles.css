@@ -10,9 +10,9 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: #dbeafe;
+  background-color: #c4c4ea;
   font-family: Arial, sans-serif;
-  color: #1e293b;
+  color: #151515;
 }
 
 header,
@@ -21,20 +21,22 @@ main {
   text-align: center;
 }
 
-
 section {
   width: min(90%, 450px);
   margin: 20px auto;
-  padding: 0 10px;
+  padding: 30px 20px;
+  background-color: #e0e5ec;
+  border-radius: 20px;
+  box-shadow:
+    9px 9px 16px #0765f1,
+    -9px -9px 16px #ffffff;
 }
-
 
 #contactForm {
   display: flex;
   flex-direction: column;
-  gap: 16px; 
+  gap: 20px;
 }
-
 
 #contactForm p {
   margin: 0;
@@ -44,27 +46,32 @@ section {
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
-
 
 input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 12px;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #c2d6e6;
+  color: #4b5563;
+  box-shadow:
+    inset 4px 4px 8px #0a4b5a,
+    inset -4px -4px 8px #ffffff;
+  transition: box-shadow 0.2s;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow:
+    inset 5px 5px 10px #0350c5,
+    inset -5px -5px 10px #ffffff;
 }
 
 textarea {
@@ -72,49 +79,68 @@ textarea {
   resize: vertical;
 }
 
-#contactForm p:last-child {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
+input[type="radio"] {
+  accent-color: #6b7280;
 }
 
+#contactForm p:last-child {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
 
 input[type="submit"],
 input[type="reset"] {
-  flex: 1; 
+  flex: 1;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  background-color: #e0e5ec;
+  color: #4b5563;
+  box-shadow:
+    6px 6px 12px #b8bcc2,
+    -6px -6px 12px #ffffff;
+  transition: box-shadow 0.15s, transform 0.1s, color 0.15s;
 }
 
-
-input[type="submit"] {
-  background-color: #2563eb;
-  color: white;
-}
-
-input[type="submit"]:hover {
-  background-color: #1d4ed8;
-}
-
-input[type="submit"]:active {
-  transform: scale(0.98);
-}
-
-
-input[type="reset"] {
-  background-color: #94a3b8;
-  color: white;
-}
-
+input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background-color: #64748b;
+  color: #7a1f2b;
+  box-shadow:
+    4px 4px 8px #280483,
+    -4px -4px 8px #ffffff;
 }
 
+input[type="submit"]:active,
 input[type="reset"]:active {
+  box-shadow:
+    inset 4px 4px 8px #0712e1,
+    inset -4px -4px 8px #ffffff;
   transform: scale(0.98);
+}
+
+#resultado {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 12px;
+  background-color: #e0e5ec;
+  box-shadow:
+    inset 4px 4px 8px #07de68,
+    inset -4px -4px 8px #ffffff;
+  text-align: left;
+}
+
+#resultado:empty {
+  display: none;
+}
+
+#resultado h3 {
+  margin-top: 0;
+}
+
+body.enviado {
+  background-color: #4fda5d;
 }
