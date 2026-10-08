@@ -1,15 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  background: #0a397f;
+  background: #f0f2f5;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
-
 .caja {
-  background: rgb(119, 182, 203);
+  background: rgb(182, 184, 186);
   width: 360px;
   padding: 40px;
   border-radius: 10px;
@@ -47,8 +46,8 @@ input {
 }
 
 button {
-  background: #4747e1;
-  color: white;
+  background: #fcffff;
+  color: rgb(10, 0, 0);
   border: none;
   padding: 10px 24px;
   font-size: 15px;
