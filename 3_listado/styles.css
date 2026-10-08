@@ -1,0 +1,138 @@
+:root {
+  --azul: #6190e1;
+  --azul-claro: #d6e4f7;
+  --azul-hecha: #1a21a9;
+  --fila-1: #f9f9f9;
+  --fila-2: #eeeeee;
+  --tinta: #1b1b1b;
+}
+ 
+* { box-sizing: border-box; }
+ 
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--tinta);
+  background: #fff;
+}
+ 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+ 
+.app { max-width: 50rem; margin: 0 auto; }
+ 
+/* Cabecera azul */
+.cabecera {
+  background: var(--azul);
+  padding: 2rem 3rem 2.4rem;
+  text-align: center;
+}
+ 
+.cabecera h1 {
+  margin: 0 0 1rem;
+  color: #fff;
+  font-size: 1.8rem;
+}
+ 
+.nueva-tarea { display: flex; }
+ 
+.nueva-tarea input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.8rem 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  border: 0;
+  border-radius: 0;
+}
+ 
+.nueva-tarea button {
+  width: 25%;
+  min-width: 6rem;
+  padding: 0.8rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: #333;
+  background: var(--azul-claro);
+  border: 0;
+  cursor: pointer;
+}
+ 
+.nueva-tarea button:hover { background: #5cc6d8; }
+ 
+/* Lista */
+.lista { list-style: none; margin: 0; padding: 0; }
+ 
+.tarea {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  font-size: 1.15rem;
+  background: var(--fila-1);
+}
+ 
+.tarea:nth-child(even) { background: var(--fila-2); }
+ 
+.tarea__texto { flex: 1; word-break: break-word; }
+ 
+.tarea input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--azul);
+  cursor: pointer;
+}
+ 
+.tarea__borrar {
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--azul);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+ 
+.tarea__borrar:hover { color: #b9432b; }
+ 
+/* Tarea completada: fila azul grisácea, texto tachado y marca a la izquierda */
+.tarea.completada,
+.tarea.completada:nth-child(even) {
+  background: var(--azul-hecha);
+  color: #fff;
+}
+ 
+.tarea.completada .tarea__texto { text-decoration: line-through; }
+.tarea.completada .tarea__borrar { color: #fff; }
+ 
+.tarea.completada::before {
+  content: "";
+  position: absolute;
+  left: 1.3rem;
+  top: 50%;
+  width: 0.6rem;
+  height: 1.1rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-65%) rotate(45deg);
+}
+ 
+.vacio { text-align: center; color: #555; margin: 1.5rem 0; }
+ 
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #010429;
+  outline-offset: 2px;
+}
+ 
+@media (max-width: 480px) {
+  .cabecera { padding: 1.5rem 1rem 1.8rem; }
+}
